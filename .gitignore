@@ -193,7 +193,6 @@ bin/mvnw.cmd
 bin/pom.xml
 bin/.mvn/wrapper/maven-wrapper.properties
 bin/.settings/org.eclipse.core.resources.prefs
-bin/src/main/resources/application.yml
 
 *.yml
 *.yaml
