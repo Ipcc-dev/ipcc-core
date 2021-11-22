@@ -1,4 +1,4 @@
-package com.ipccc.ipcccore.app;
+package com.ipccc.ipcccore.app.config;
 
 
 import java.util.Collections;

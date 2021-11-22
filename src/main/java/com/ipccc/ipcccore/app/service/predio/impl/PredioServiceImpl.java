@@ -14,30 +14,30 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class PredioServiceImpl implements PredioService {
 
-  private final PredioRepository predioRepository;
+  private final PredioRepository repository;
 
   @Override
   public PredioEntity save(PredioEntity entity) {
-    return predioRepository.save(entity);
+    return repository.save(entity);
   }
 
   @Override
   public PredioEntity update(PredioEntity entity) {
-    return predioRepository.save(entity);
+    return repository.save(entity);
   }
 
   @Override
   public void remove(Long aLong) {
-    predioRepository.deleteById(aLong);
+    repository.deleteById(aLong);
   }
 
   @Override
   public PredioEntity read(Long aLong) {
-    return predioRepository.findById(aLong).orElseThrow(() -> new ErrorException(PREDIO_NO_EXISTE));
+    return repository.findById(aLong).orElseThrow(() -> new ErrorException(PREDIO_NO_EXISTE));
   }
 
   @Override
   public List<PredioEntity> findAll() {
-    return predioRepository.findAll();
+    return repository.findAll();
   }
 }

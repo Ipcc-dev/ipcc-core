@@ -1,5 +1,6 @@
 package com.ipccc.ipcccore.app.model.entity;
 
+import com.ipccc.ipcccore.app.model.entity.support.Entities;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,14 +19,14 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Role implements Serializable {
+public class RolEntity implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	@Column(unique = true, length = 30)
-	private String name;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  private String uniqueId;
+  @Column(unique = true, length = 30)
+  private String nombre;
 }

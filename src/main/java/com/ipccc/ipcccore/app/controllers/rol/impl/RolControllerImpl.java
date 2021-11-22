@@ -1,7 +1,8 @@
-package com.ipccc.ipcccore.app.controllers;
+package com.ipccc.ipcccore.app.controllers.rol.impl;
 
-import com.ipccc.ipcccore.app.model.entity.PredioEntity;
-import com.ipccc.ipcccore.app.service.predio.PredioService;
+import com.ipccc.ipcccore.app.controllers.rol.RolController;
+import com.ipccc.ipcccore.app.model.entity.RolEntity;
+import com.ipccc.ipcccore.app.service.rol.RolService;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,35 +16,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/predio")
+@RequestMapping("/rol")
 @AllArgsConstructor
-public class PredioControllerImpl {
+public class RolControllerImpl implements RolController {
 
   @Autowired
-  private final PredioService predioService;
+  private final RolService service;
 
   @PostMapping
-  public PredioEntity save(@RequestBody PredioEntity entity) {
-    return predioService.save(entity);
+  public RolEntity save(@RequestBody RolEntity entity) {
+    return service.save(entity);
   }
 
   @PutMapping
-  public PredioEntity update(@RequestBody PredioEntity entity) {
-    return predioService.update(entity);
+  public RolEntity update(@RequestBody RolEntity entity) {
+    return service.update(entity);
   }
 
   @DeleteMapping("/{id}")
   public void remove(@PathVariable(name = "id") Long id) {
-    predioService.remove(id);
+    service.remove(id);
   }
 
   @GetMapping("/{id}")
-  public PredioEntity read(@PathVariable(name = "id") Long id) {
-    return predioService.read(id);
+  public RolEntity read(@PathVariable(name = "id") Long id) {
+    return service.read(id);
   }
 
   @GetMapping
-  public List<PredioEntity> findAll() {
-    return predioService.findAll();
+  public List<RolEntity> findAll() {
+    return service.findAll();
   }
 }

@@ -2,6 +2,7 @@ package com.ipccc.ipcccore.app.model.entity;
 
 import com.ipccc.ipcccore.app.model.entity.support.Entities;
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,21 +14,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "matricula")
+@Table(name = "procesos")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class MatriculaEntity  implements Serializable {
+@NoArgsConstructor
+public class ProcesolEntity  implements Serializable {
+
+  private static final long serialVersionUID = 1L;
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String uniqueId;
-  private String proceso;
-  private String tipoDocumento;
-  private String numero_informe;
-  private String Actualizaciones;
-
-
+  @Column(unique = true, length = 30)
+  private String nombre;
 }

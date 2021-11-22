@@ -9,18 +9,18 @@ import lombok.Setter;
 @Getter
 @Setter
 public abstract class Message {
-	
-    @JsonProperty("code")
-    private String code;
 
-    @JsonProperty("message")
-    private String message;
+  @JsonProperty("code")
+  private String code;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
-    private LocalDateTime timestamp = LocalDateTime.now();
+  @JsonProperty("message")
+  private String message;
 
-    public Message(String code, String message) {
-        this.code = code;
-        this.message = message;
-    }
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
+  private LocalDateTime timestamp = LocalDateTime.now();
+
+  public Message(String code, String message) {
+    this.code = code;
+    this.message = message;
+  }
 }
