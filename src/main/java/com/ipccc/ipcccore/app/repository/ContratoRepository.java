@@ -2,7 +2,6 @@ package com.ipccc.ipcccore.app.repository;
 
 import com.ipccc.ipcccore.app.model.entity.ContratoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 public interface ContratoRepository extends JpaRepository<ContratoEntity, Long> {
 //

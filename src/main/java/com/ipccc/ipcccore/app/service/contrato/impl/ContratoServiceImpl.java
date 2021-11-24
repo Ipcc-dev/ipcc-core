@@ -2,9 +2,7 @@ package com.ipccc.ipcccore.app.service.contrato.impl;
 
 import com.ipccc.ipcccore.app.commons.ErrorException;
 import com.ipccc.ipcccore.app.model.entity.ContratoEntity;
-import com.ipccc.ipcccore.app.model.entity.UsuarioAnonimoEntity;
 import com.ipccc.ipcccore.app.repository.ContratoRepository;
-import com.ipccc.ipcccore.app.repository.UsuarioAnonimoRepository;
 import com.ipccc.ipcccore.app.service.contrato.ContratoService;
 import java.util.List;
 import lombok.AllArgsConstructor;

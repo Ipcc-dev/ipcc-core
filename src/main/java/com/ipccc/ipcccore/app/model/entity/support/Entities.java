@@ -17,20 +17,20 @@ import org.springframework.data.domain.Persistable;
 @MappedSuperclass
 public abstract class Entities<I extends Serializable> extends Auditable implements Persistable<I> {
 
-    private static final long serialVersionUID = 1L;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    protected I id;
+  private static final long serialVersionUID = 1L;
 
-    @Override
-    public boolean isNew() {
-        return (id == null);
-    }
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  protected I id;
 
-    @Override
-    public I getId() {
-        return id;
-    }
+  @Override
+  public boolean isNew() {
+    return (id == null);
+  }
+
+  @Override
+  public I getId() {
+    return id;
+  }
 }

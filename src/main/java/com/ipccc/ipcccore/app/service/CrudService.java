@@ -1,6 +1,5 @@
 package com.ipccc.ipcccore.app.service;
 
-import com.ipccc.ipcccore.app.model.entity.RolEntity;
 import java.util.List;
 
 public interface CrudService<T, ID> {

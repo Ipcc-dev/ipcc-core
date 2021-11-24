@@ -1,6 +1,5 @@
 package com.ipccc.ipcccore.app.model.entity;
 
-import com.ipccc.ipcccore.app.model.entity.support.Entities;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +18,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProcesolEntity  implements Serializable {
+public class ProcesolEntity implements Serializable {
 
   private static final long serialVersionUID = 1L;
 

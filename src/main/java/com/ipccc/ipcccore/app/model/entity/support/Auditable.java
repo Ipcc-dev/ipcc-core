@@ -23,23 +23,23 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 public class Auditable implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    @CreatedBy
-    @Column(name = "created_by")
-    protected String createdBy;
+  @CreatedBy
+  @Column(name = "created_by")
+  protected String createdBy;
 
-    @CreatedDate
-    @Column(name = "created_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    protected Date createdDate;
+  @CreatedDate
+  @Column(name = "created_date")
+  @Temporal(TemporalType.TIMESTAMP)
+  protected Date createdDate;
 
-    @LastModifiedBy
-    @Column(name = "modified_by")
-    protected String modifiedBy;
+  @LastModifiedBy
+  @Column(name = "modified_by")
+  protected String modifiedBy;
 
-    @LastModifiedDate
-    @Column(name = "last_modified_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    protected Date lastModifiedDate;
+  @LastModifiedDate
+  @Column(name = "last_modified_date")
+  @Temporal(TemporalType.TIMESTAMP)
+  protected Date lastModifiedDate;
 }

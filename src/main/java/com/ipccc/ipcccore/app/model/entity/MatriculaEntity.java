@@ -1,6 +1,5 @@
 package com.ipccc.ipcccore.app.model.entity;
 
-import com.ipccc.ipcccore.app.model.entity.support.Entities;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +17,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MatriculaEntity  implements Serializable {
+public class MatriculaEntity implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

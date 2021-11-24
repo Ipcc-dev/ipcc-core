@@ -1,6 +1,5 @@
 package com.ipccc.ipcccore.app.model.entity;
 
-import com.ipccc.ipcccore.app.model.entity.support.Entities;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
@@ -9,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

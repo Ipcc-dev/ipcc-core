@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 public class UsuarioServiceImpl implements UsuarioService {
 
   private final UsuarioRepository repository;
-  private final RolRepository rolRepository;
 
   @Override
   public UsuarioEntity save(UsuarioEntity entity) {
