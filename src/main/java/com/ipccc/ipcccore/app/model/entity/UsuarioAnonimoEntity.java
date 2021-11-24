@@ -36,9 +36,7 @@ public class UsuarioAnonimoEntity implements Serializable {
   @Column(length = 60)
   private String password;
 
-  @Column(unique = true, length = 100)
   private String correo;
-
   private Date fechaIngreso;
   private String longitud;
   private String latitud;

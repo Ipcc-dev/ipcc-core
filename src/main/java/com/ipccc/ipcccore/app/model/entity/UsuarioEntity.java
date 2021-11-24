@@ -51,6 +51,18 @@ public class UsuarioEntity implements Serializable {
   private String primerApellido;
   private String segundoApellido;
 
+  private String numeroDocumento;
+  private String tipoDocumento;
+
+  private String dependencia;
+
+  private String tipoContrato;
+  private String estadoContrato;
+  private Date fechaInicioContrato;
+  private Date fechaFinContrato;
+
+  private String longitud;
+  private String latitud;
 
   @ManyToMany(targetEntity = RolEntity.class, fetch = FetchType.LAZY)
   @JoinTable(name = "usuario_roles", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"), uniqueConstraints = {
