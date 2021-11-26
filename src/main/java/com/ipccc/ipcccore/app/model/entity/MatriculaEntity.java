@@ -22,7 +22,6 @@ public class MatriculaEntity implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String uniqueId;
   private String proceso;
   private String tipoDocumento;
   private String numero_informe;

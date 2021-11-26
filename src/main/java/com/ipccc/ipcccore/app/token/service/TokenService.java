@@ -11,7 +11,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +22,8 @@ public class TokenService implements IUsuarioService {
 
 
   @Override
-  public UserDetails loadUserByUsername(String username, String password) throws UsernameNotFoundException {
+  public UserDetails loadUserByUsername(String username, String password)
+      throws UsernameNotFoundException {
 
     try {
       UsuarioEntity user = usuarioService.findByNombreDeUsuarioAndPassword(username, password);

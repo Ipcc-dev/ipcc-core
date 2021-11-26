@@ -3,6 +3,7 @@ package com.ipccc.ipcccore.app.controllers.moduloacceso.impl;
 import com.ipccc.ipcccore.app.controllers.moduloacceso.ModuloAccesoController;
 import com.ipccc.ipcccore.app.model.entity.ModuloAccesoEntity;
 import com.ipccc.ipcccore.app.service.moduloacceso.ModuloAccesoService;
+import io.swagger.annotations.Api;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/accesos")
 @AllArgsConstructor
+@Api(tags = "Modulos de acceso API")
 public class ModuloAccesoControllerImpl implements ModuloAccesoController {
 
   @Autowired
@@ -50,7 +52,7 @@ public class ModuloAccesoControllerImpl implements ModuloAccesoController {
 
   @Override
   @GetMapping("/rol/{rol-id}")
-  public List<ModuloAccesoEntity> findByRol( @PathVariable(name = "rol-id") Long rolId) {
+  public List<ModuloAccesoEntity> findByRol(@PathVariable(name = "rol-id") Long rolId) {
     return service.findByRol(rolId);
   }
 }

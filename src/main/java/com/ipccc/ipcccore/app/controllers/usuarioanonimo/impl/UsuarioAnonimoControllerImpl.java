@@ -3,6 +3,7 @@ package com.ipccc.ipcccore.app.controllers.usuarioanonimo.impl;
 import com.ipccc.ipcccore.app.controllers.usuarioanonimo.UsuarioAnonimoController;
 import com.ipccc.ipcccore.app.model.entity.UsuarioAnonimoEntity;
 import com.ipccc.ipcccore.app.service.usuarioanonimo.UsuarioAnonimoService;
+import io.swagger.annotations.Api;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/anonimo")
 @AllArgsConstructor
+@Api(tags = "Usuario anonimo API")
 public class UsuarioAnonimoControllerImpl implements UsuarioAnonimoController {
 
   @Autowired

@@ -3,6 +3,7 @@ package com.ipccc.ipcccore.app.controllers.usuario.impl;
 import com.ipccc.ipcccore.app.controllers.usuario.UsuarioController;
 import com.ipccc.ipcccore.app.model.entity.UsuarioEntity;
 import com.ipccc.ipcccore.app.service.usuario.UsuarioService;
+import io.swagger.annotations.Api;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/usuario")
 @AllArgsConstructor
+@Api(tags = "Usuarios API")
+
 public class UsuarioControllerImpl implements UsuarioController {
 
   @Autowired

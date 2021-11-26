@@ -25,7 +25,6 @@ public class ProcesolEntity implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String uniqueId;
   @Column(unique = true, length = 30)
   private String nombre;
 }

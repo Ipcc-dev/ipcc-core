@@ -25,7 +25,7 @@ public class IpccCoreApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    RolEntity rolEntity = rolService.save(new RolEntity(0L, "admin", "admin"));
+    RolEntity rolEntity = rolService.save(new RolEntity(0L, "admin"));
     UsuarioEntity usuarioEntity = new UsuarioEntity();
     usuarioEntity.setRoles(Arrays.asList(rolEntity));
     usuarioEntity.setPassword("En2das74b8");

@@ -32,8 +32,8 @@ public class UsuarioEntity implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String uniqueId;
 
+  @Column(unique = true)
   private String nombreDeUsuario;
 
   @Column(length = 60)
@@ -43,6 +43,7 @@ public class UsuarioEntity implements Serializable {
   private String correo;
   private Integer attempt;
   private Boolean enabled;
+
   private String primerNombre;
   private String segundoNombre;
   private String primerApellido;

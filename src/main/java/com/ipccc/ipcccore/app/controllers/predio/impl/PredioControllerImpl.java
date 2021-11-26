@@ -3,6 +3,7 @@ package com.ipccc.ipcccore.app.controllers.predio.impl;
 import com.ipccc.ipcccore.app.controllers.predio.PredioController;
 import com.ipccc.ipcccore.app.model.entity.PredioEntity;
 import com.ipccc.ipcccore.app.service.predio.PredioService;
+import io.swagger.annotations.Api;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/predio")
 @AllArgsConstructor
+@Api(tags = "Predio API")
 public class PredioControllerImpl implements PredioController {
 
   @Autowired

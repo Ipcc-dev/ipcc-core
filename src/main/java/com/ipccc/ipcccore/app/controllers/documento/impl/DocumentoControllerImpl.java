@@ -1,8 +1,9 @@
-package com.ipccc.ipcccore.app.controllers.contrato.impl;
+package com.ipccc.ipcccore.app.controllers.documento.impl;
 
-import com.ipccc.ipcccore.app.controllers.contrato.ContratoController;
-import com.ipccc.ipcccore.app.model.entity.ContratoEntity;
-import com.ipccc.ipcccore.app.service.contrato.ContratoService;
+import com.ipccc.ipcccore.app.controllers.documento.DocumentoController;
+import com.ipccc.ipcccore.app.model.entity.DocumentoEntity;
+import com.ipccc.ipcccore.app.service.documento.DocumentoService;
+import io.swagger.annotations.Api;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +17,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/contrato")
+@RequestMapping("/documento")
 @AllArgsConstructor
-public class ContratoControllerImpl implements ContratoController {
+@Api(tags = "Documentos API")
+public class DocumentoControllerImpl implements DocumentoController {
 
   @Autowired
-  private final ContratoService service;
+  private final DocumentoService service;
 
   @PostMapping
-  public ContratoEntity save(@RequestBody ContratoEntity entity) {
+  public DocumentoEntity save(@RequestBody DocumentoEntity entity) {
     return service.save(entity);
   }
 
   @PutMapping
-  public ContratoEntity update(@RequestBody ContratoEntity entity) {
+  public DocumentoEntity update(@RequestBody DocumentoEntity entity) {
     return service.update(entity);
   }
 
@@ -39,17 +41,13 @@ public class ContratoControllerImpl implements ContratoController {
   }
 
   @GetMapping("/{id}")
-  public ContratoEntity read(@PathVariable(name = "id") Long id) {
+  public DocumentoEntity read(@PathVariable(name = "id") Long id) {
     return service.read(id);
   }
 
   @GetMapping
-  public List<ContratoEntity> findAll() {
+  public List<DocumentoEntity> findAll() {
     return service.findAll();
   }
 
-//  @GetMapping("/usuario/{id}")
-//  public ContratoEntity findByUsuarioId(Long usuarioId) {
-//    return service.findByUsuarioId(usuarioId);
-//  }
 }

@@ -1,8 +1,8 @@
 package com.ipccc.ipcccore.app.config;
 
 import com.ipccc.ipcccore.app.token.security.JWTAuthorizationFilter;
-import org.springframework.http.HttpMethod;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -15,8 +15,9 @@ public class WebConfig extends WebSecurityConfigurerAdapter implements WebMvcCon
 
   @Override
   public void addCorsMappings(CorsRegistry registry) {
-    registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "POST","PUT", "DELETE");
+    registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "POST", "PUT", "DELETE");
   }
+
   @Override
   public void configure(WebSecurity web) throws Exception {
     web.ignoring().antMatchers("/v2/api-docs",
@@ -26,12 +27,14 @@ public class WebConfig extends WebSecurityConfigurerAdapter implements WebMvcCon
         "/swagger-ui.html",
         "/webjars/**");
   }
+
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.csrf().disable()
         .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
         .authorizeRequests()
         .antMatchers(HttpMethod.POST, "/token").permitAll()
+        .antMatchers(HttpMethod.POST,"/anonimo").permitAll()
         .anyRequest().authenticated();
   }
 }

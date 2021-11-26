@@ -26,7 +26,6 @@ public class UsuarioAnonimoEntity implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String uniqueId;
   @Column(unique = true, length = 20)
   private String nombreDeUsuario;
 

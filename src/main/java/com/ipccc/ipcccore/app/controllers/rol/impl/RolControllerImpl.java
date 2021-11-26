@@ -3,6 +3,7 @@ package com.ipccc.ipcccore.app.controllers.rol.impl;
 import com.ipccc.ipcccore.app.controllers.rol.RolController;
 import com.ipccc.ipcccore.app.model.entity.RolEntity;
 import com.ipccc.ipcccore.app.service.rol.RolService;
+import io.swagger.annotations.Api;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/rol")
 @AllArgsConstructor
+@Api(tags = "Rol API")
 public class RolControllerImpl implements RolController {
 
   @Autowired

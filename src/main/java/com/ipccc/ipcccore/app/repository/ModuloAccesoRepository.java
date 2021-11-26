@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface ModuloAccesoRepository extends JpaRepository<ModuloAccesoEntity, Long> {
+
   @Query("SELECT l FROM ModuloAccesoEntity l INNER JOIN RolEntity a ON a.id = l.rol.id AND a.id = :rolId")
   List<ModuloAccesoEntity> findByRol(Long rolId);
 }

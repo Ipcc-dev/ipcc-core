@@ -7,19 +7,18 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Collection;
 import java.util.Date;
-
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TokenController {
+
   @Autowired
   private IUsuarioService userDetailsService;
 
@@ -33,15 +32,27 @@ public class TokenController {
     return user;
 
   }
+  @PostMapping("/token/anonimo")
+  public Token loginAnonimo(@RequestBody TokenRequest tokenRequest) {
+
+    String token = getJWTToken(tokenRequest.getUser(), tokenRequest.getPassword());
+    Token user = new Token();
+    user.setUser(tokenRequest.getUser());
+    user.setToken(token);
+    return user;
+
+  }
 
   private String getJWTToken(String username, String pwd) {
-
-
+    Collection<? extends GrantedAuthority> grantedAuthorities;
     String secretKey = "mySecretKey";
-    UserDetails user= userDetailsService.loadUserByUsername(username, pwd);
-    Collection<? extends GrantedAuthority> grantedAuthorities = user.getAuthorities();
-
-
+    if(pwd==null || pwd.isEmpty()){
+      grantedAuthorities = AuthorityUtils
+          .commaSeparatedStringToAuthorityList("ROLE_USER");
+    }else {
+      UserDetails user = userDetailsService.loadUserByUsername(username, pwd);
+      grantedAuthorities = user.getAuthorities();
+    }
     String token = Jwts
         .builder()
         .setId("ipccJWT")
@@ -55,6 +66,6 @@ public class TokenController {
         .signWith(SignatureAlgorithm.HS512,
             secretKey.getBytes()).compact();
 
-    return "Bearer " + token;
+    return token;
   }
 }
