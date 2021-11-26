@@ -2,7 +2,6 @@ package com.ipccc.ipcccore.app.controllers.usuario.impl;
 
 import com.ipccc.ipcccore.app.controllers.usuario.UsuarioController;
 import com.ipccc.ipcccore.app.model.entity.UsuarioEntity;
-import com.ipccc.ipcccore.app.service.moduloacceso.ModuloAccesoService;
 import com.ipccc.ipcccore.app.service.usuario.UsuarioService;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -47,5 +46,12 @@ public class UsuarioControllerImpl implements UsuarioController {
   @GetMapping
   public List<UsuarioEntity> findAll() {
     return service.findAll();
+  }
+
+  @Override
+  @PostMapping("/nombre-usuario")
+  public UsuarioEntity findByNombreDeUsuario(
+      @PathVariable(name = "nombre-usuario") String nombreDeUsuario) {
+    return service.findByNombreDeUsuario(nombreDeUsuario);
   }
 }
