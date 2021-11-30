@@ -25,7 +25,8 @@ public class WebConfig extends WebSecurityConfigurerAdapter implements WebMvcCon
         "/swagger-resources/**",
         "/configuration/security",
         "/swagger-ui.html",
-        "/webjars/**");
+        "/webjars/**","/token"
+    );
   }
 
   @Override
